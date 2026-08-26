@@ -27,7 +27,7 @@ export function Skills() {
       <div className="grid gap-6 lg:grid-cols-3">
         {groups.map((group, i) => (
           <Reveal key={group.title} delay={i * 100}>
-            <div className="glass-card h-full rounded-3xl p-7">
+            <div className="glass-card sheen h-full rounded-3xl p-7">
               <h3 className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
                 {group.title}
               </h3>
@@ -35,7 +35,7 @@ export function Skills() {
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full border border-glass-border bg-secondary/40 px-3.5 py-1.5 text-sm text-foreground/90 transition-colors hover:border-primary/50 hover:text-primary"
+                    className="rounded-full border border-glass-border bg-secondary/40 px-3.5 py-1.5 text-sm text-foreground/90 lift hover:border-primary/50 hover:text-primary"
                   >
                     {item}
                   </li>

@@ -11,11 +11,18 @@ const stats = [
 export function Hero() {
   return (
     <section id="top" className="hero-aurora relative overflow-hidden pb-20 pt-32 sm:pt-40">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="grid-overlay absolute inset-0" aria-hidden />
+      <div className="orb -left-24 top-10 size-80 bg-primary/15" aria-hidden />
+      <div
+        className="orb -right-16 top-40 size-96 bg-accent/10"
+        style={{ animationDelay: "-6s" }}
+        aria-hidden
+      />
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <Reveal>
             <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-mono text-xs uppercase tracking-[0.25em] text-primary">
-              <span className="size-1.5 rounded-full bg-primary" />
+              <span className="pulse-dot size-1.5 rounded-full bg-primary" />
               Open to internships
             </span>
           </Reveal>
@@ -23,7 +30,7 @@ export function Hero() {
           <Reveal delay={80}>
             <h1 className="mt-7 text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-6xl">
               Building Modern Web Experiences with{" "}
-              <span className="text-gradient">Code, AI &amp; Data</span>
+              <span className="shimmer-text">Code, AI &amp; Data</span>
             </h1>
           </Reveal>
 
@@ -39,7 +46,7 @@ export function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+                className="sheen group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
               >
                 View Projects
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -69,7 +76,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="GitHub profile"
-                className="glass rounded-xl p-2.5 text-muted-foreground transition-colors hover:text-primary"
+                className="glass lift rounded-xl p-2.5 text-muted-foreground hover:text-primary"
               >
                 <Github className="size-5" />
               </a>
@@ -78,7 +85,7 @@ export function Hero() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="LinkedIn profile"
-                className="glass rounded-xl p-2.5 text-muted-foreground transition-colors hover:text-primary"
+                className="glass lift rounded-xl p-2.5 text-muted-foreground hover:text-primary"
               >
                 <Linkedin className="size-5" />
               </a>
@@ -89,7 +96,7 @@ export function Hero() {
           <Reveal delay={400}>
             <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4">
               {stats.map((stat) => (
-                <div key={stat.label} className="glass-card rounded-2xl px-4 py-5">
+                <div key={stat.label} className="glass-card sheen rounded-2xl px-4 py-5">
                   <dt className="sr-only">{stat.label}</dt>
                   <dd className="font-display text-2xl font-semibold text-primary">{stat.value}</dd>
                   <dd className="mt-1 text-xs text-muted-foreground">{stat.label}</dd>
@@ -100,8 +107,8 @@ export function Hero() {
         </div>
 
         <Reveal delay={200} className="relative mx-auto w-full max-w-sm">
-          <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/10 blur-3xl" aria-hidden />
-          <div className="glass-card relative overflow-hidden rounded-[2rem] p-2">
+          <div className="orb -inset-6 bg-primary/15" aria-hidden />
+          <div className="glass-card sheen float-slow relative overflow-hidden rounded-[2rem] p-2">
             <img
               src={portrait}
               alt="Portrait of Janhavi Girase, web developer and AI/ML enthusiast"
