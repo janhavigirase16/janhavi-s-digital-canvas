@@ -41,7 +41,7 @@ export function Interests() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {interests.map((item, i) => (
           <Reveal key={item.title} delay={i * 80}>
-            <article className="glass-card h-full rounded-3xl p-7">
+            <article className="glass-card sheen h-full rounded-3xl p-7">
               <item.icon className="size-6 text-accent" />
               <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>

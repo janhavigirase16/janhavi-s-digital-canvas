@@ -48,7 +48,7 @@ export function Projects() {
       <div className="grid gap-6 lg:grid-cols-2">
         {projects.map((project, i) => (
           <Reveal key={project.title} delay={i * 90}>
-            <article className="glass-card flex h-full flex-col rounded-3xl p-7">
+            <article className="glass-card sheen flex h-full flex-col rounded-3xl p-7">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
                 <span className="font-mono text-xs text-muted-foreground">
