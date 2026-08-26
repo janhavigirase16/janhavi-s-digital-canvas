@@ -40,7 +40,7 @@ export function Contact() {
     >
       <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
-          <div className="glass-card h-full rounded-3xl p-7">
+          <div className="glass-card sheen h-full rounded-3xl p-7">
             <h3 className="text-lg font-semibold">Reach out directly</h3>
             <ul className="mt-6 space-y-5 text-sm">
               <li className="flex items-center gap-3">
@@ -79,7 +79,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={120}>
-          <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-7">
+          <form onSubmit={handleSubmit} className="glass-card sheen rounded-3xl p-7">
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="grid gap-2">
                 <label htmlFor="name" className="text-sm font-medium">

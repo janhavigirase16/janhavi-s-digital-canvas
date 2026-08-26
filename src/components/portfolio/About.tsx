@@ -36,7 +36,7 @@ export function About() {
       <div className="grid gap-6 md:grid-cols-2">
         {pillars.map((pillar, i) => (
           <Reveal key={pillar.title} delay={i * 90}>
-            <article className="glass-card h-full rounded-3xl p-7">
+            <article className="glass-card sheen h-full rounded-3xl p-7">
               <span className="inline-flex rounded-2xl bg-primary/10 p-3 text-primary">
                 <pillar.icon className="size-5" />
               </span>

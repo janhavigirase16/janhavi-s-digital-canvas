@@ -183,3 +183,131 @@
     transition: none;
   }
 }
+
+/* ---- Motion layer: effects & animations ---- */
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(3%, -4%, 0) scale(1.06); }
+  66% { transform: translate3d(-3%, 3%, 0) scale(0.96); }
+}
+
+@keyframes shimmer-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 oklch(0.65 0.16 40 / 45%); }
+  70% { box-shadow: 0 0 0 8px oklch(0.65 0.16 40 / 0%); }
+  100% { box-shadow: 0 0 0 0 oklch(0.65 0.16 40 / 0%); }
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility float-slow {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@utility orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  animation: drift 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@utility shimmer-text {
+  background: linear-gradient(
+    100deg,
+    oklch(0.96 0.005 70) 0%,
+    oklch(0.72 0.15 42) 35%,
+    oklch(0.9 0.09 60) 50%,
+    oklch(0.72 0.15 42) 65%,
+    oklch(0.96 0.005 70) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-pan 7s linear infinite;
+}
+
+@utility pulse-dot {
+  animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@utility sheen {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 35%,
+      oklch(0.95 0.02 70 / 9%) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    transform: translateX(120%);
+  }
+}
+
+@utility lift {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@utility grid-overlay {
+  background-image:
+    linear-gradient(oklch(0.6 0.01 60 / 6%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.6 0.01 60 / 6%) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(70% 60% at 50% 0%, #000 0%, transparent 80%);
+  pointer-events: none;
+}
+
+@utility marquee-track {
+  animation: marquee-x 32s linear infinite;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 60;
+  background: linear-gradient(90deg, oklch(0.65 0.163 40), oklch(0.8 0.12 70));
+  transition: width 0.12s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow,
+  .orb,
+  .shimmer-text,
+  .pulse-dot,
+  .marquee-track {
+    animation: none !important;
+  }
+}

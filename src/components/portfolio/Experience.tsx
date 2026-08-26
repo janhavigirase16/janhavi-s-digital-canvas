@@ -43,7 +43,7 @@ export function Experience() {
         <div className="grid gap-5">
           {timeline.map((item, i) => (
             <Reveal key={item.title} delay={i * 90}>
-              <article className="glass-card rounded-3xl p-7">
+              <article className="glass-card sheen rounded-3xl p-7">
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="inline-flex rounded-xl bg-accent/10 p-2 text-accent">
                     <Briefcase className="size-4" />
@@ -61,7 +61,7 @@ export function Experience() {
         </div>
 
         <Reveal delay={120}>
-          <div className="glass-card h-full rounded-3xl p-7">
+          <div className="glass-card sheen h-full rounded-3xl p-7">
             <h3 className="flex items-center gap-2 text-lg font-semibold">
               <Award className="size-5 text-primary" />
               Certifications
